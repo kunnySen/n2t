@@ -17,4 +17,19 @@ CHIP PC {
 
     PARTS:
     // Put your code here:
+
+Inc16(in=regout,out=incr);
+Mux16(a=regout,b=incr,sel=inc,out=incout);
+
+Mux16(a=incout,b=in,sel=load,out=loadout);
+
+Not16(in=regout,out=notout);
+Inc16(in=notout,out=notincout);
+Add16(a=regout,b=notincout,out=res);
+Mux16(a=loadout,b=res,sel=reset,out=resout);
+
+Or(a=load,b=inc,out=or1out);
+Or(a=or1out,b=reset,out=orout);
+Register(in=resout,out=regout,load=orout,out=out);
+//LET'S GET IT
 }
