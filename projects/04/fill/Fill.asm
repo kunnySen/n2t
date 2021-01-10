@@ -33,10 +33,10 @@ D;JEQ
   M=0
 
   D=A
-  @24576
+  @24575
   D=D-A
-  @WHITEFILL
-  D;JLT
+@WHITEFILL
+D;JLT
 @LOOP
 0;JMP
 
@@ -52,10 +52,10 @@ D;JEQ
   M=-1
 
   D=A
-  @24576
+  @24575
   D=D-A
-  @FILL
-  D;JLT
+@FILL
+D;JLT
 @LOOP
 0;JMP
 
