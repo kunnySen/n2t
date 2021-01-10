@@ -18,24 +18,44 @@
 D=M
 @PRESSDOWN
 D;JNE
-@LOOP
+@PRESSUP
 D;JEQ
 
+(PRESSUP)
+ @16383
+ D=A
+ @R1
+ M=D
+ (WHITEFILL)
+  @R1
+  M=M+1
+  A=M
+  M=0
+
+  D=A
+  @24576
+  D=D-A
+  @WHITEFILL
+  D;JLT
+@LOOP
+0;JMP
+
 (PRESSDOWN)
-@16384
-D=A
-@R0
-M=D
-(FILL)
-@R0
-M=M+1
-A=M
-M=-1
-D=A
-@24576
-D=D-A
-@FILL
-D;JLT
+ @16383
+ D=A
+ @R0
+ M=D
+ (FILL)
+  @R0
+  M=M+1
+  A=M
+  M=-1
+
+  D=A
+  @24576
+  D=D-A
+  @FILL
+  D;JLT
 @LOOP
 0;JMP
 
