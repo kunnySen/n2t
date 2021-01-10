@@ -13,35 +13,27 @@
 
 // Put your code here.
 
-@16384
-D=A
-@i
-M=D
 (LOOP)
 @KBD
 D=M
 @PRESSDOWN
 D;JNE
-@PRESSUP
+@LOOP
 D;JEQ
 
 (PRESSDOWN)
-@i
-D=M
+@-8192
+D=A
+(OMEGALUL)
+@24576
+D=D+A
 @D
 M=-1
-@i
-M=M+1
-@LOOP
-0;JMP
-
-(PRESSUP)
-@i
-D=M
-@D
-M=-1
-@i
-M=M-1
+D=D+1
+@24576
+D=D-A
+@OMEGALUL
+D;JLT
 @LOOP
 0;JMP
 
