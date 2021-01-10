@@ -13,8 +13,8 @@
 
 // Put your code here.
 
-@SCREEN
-D=M
+@16384
+D=A
 @i
 M=D
 (LOOP)
@@ -27,17 +27,21 @@ D;JEQ
 
 (PRESSDOWN)
 @i
+D=M
+@D
 M=-1
 @i
-D=M+1
+M=M+1
 @LOOP
 0;JMP
 
 (PRESSUP)
 @i
-M=0
+D=M
+@D
+M=-1
 @i
-D=M-1
+M=M-1
 @LOOP
 0;JMP
 
