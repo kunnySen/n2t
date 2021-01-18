@@ -46,7 +46,7 @@ Or(a=instruction[5],b=Ainstr,out=Aload);
 ARegister(in=MUXout,load=Aload,out=Aout);
 Mux16(a=Aout,b=inM,sel=instruction[12],out=AM);
 DRegister(in=ALUout,load=instruction[4],out=Dout);
-ALU(x=Dout,y=AM,zx=instruction[1],nx=instruction[10],zy=instruction[9],
+ALU(x=Dout,y=AM,zx=instruction[11],nx=instruction[10],zy=instruction[9],
 ny=instruction[8],f=instruction[7],no=instruction[6],out=ALUout,out=outM,zr=zr,ng=ng);
 
 And(a=zr,b=instruction[1],out=and1);
