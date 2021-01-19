@@ -33,5 +33,5 @@ DMux(in=load,sel=address[0],a=ramload,b=screenload);
 RAM16K(in=in,load=ramload,address=address[1..14],out=ramout);
 Screen(in=in,load=screenload,address=address[2..14],out=scout);
 Keyboard(out=kbout);
-Mux4Way16(a=ramout,c=scout,d=kbout,sel=address[0..1],out=out);
+Mux4Way16(a=ramout,b=ramout,c=scout,d=kbout,sel=address[0..1],out=out);
 }
